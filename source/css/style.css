@@ -10,6 +10,7 @@
   --bg-color-3:#fff
   --line-1: #eee;
   --line-2: #ddd;
+  --button-hover-bg-color: #e0e0e0; /* 白天模式按钮悬停背景色 */
 }
 
 
@@ -23,7 +24,14 @@
   --bg-color-3:#000000;
   --line-1: #444; /* 深灰色分隔线 */
   --line-2: #555; /* 稍浅的灰色分隔线 */
+  --button-hover-bg-color: #444; /* 暗黑模式按钮悬停背景色 */
+
 }
+
+#toggle-theme:hover {
+  background-color: var(--button-hover-bg-color); /* 悬停时背景色 */
+}
+
 
 /* 按钮样式 */
 #toggle-theme {
