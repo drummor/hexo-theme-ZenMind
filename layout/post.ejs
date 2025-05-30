@@ -18,6 +18,10 @@
         <div class="post-md">
             <%- page.content %>
         </div>
+    <% } else if(page.title.endsWith('thoughts')) { %>
+        <div class="post-md-t">
+            <%- page.content %>
+        </div>
     <% } else { %>
         <div class="post-md">
             <%- page.content %>
