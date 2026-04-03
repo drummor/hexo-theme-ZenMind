@@ -289,10 +289,10 @@ a {
 
 .post-main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 24px;
 }
 .post-main-title {
@@ -302,6 +302,8 @@ a {
   font-weight: 600;
   line-height: 1.5;
   color: var(--font-color-1);
+  border-bottom: 1px dashed var(--line-2);
+  padding-bottom: 16px;
 }
 .post-meta {
   font-size: 0.875rem;
@@ -383,4 +385,17 @@ a {
 .tags .bugfix {
   --color: #ff4772;
   color: #fff;
+}
+
+/* 播客播放器 */
+.podcast-player {
+  width: 100%;
+  margin: 20px 0;
+  padding: 16px;
+  background: var(--bg-color-2);
+  border-radius: 12px;
+}
+.podcast-player audio {
+  width: 100%;
+  height: 40px;
 }
