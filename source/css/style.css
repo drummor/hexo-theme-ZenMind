@@ -399,3 +399,107 @@ a {
   width: 100%;
   height: 40px;
 }
+
+/* ========== 文章页 UI 增强 ========== */
+
+/* 标题区块 */
+.post-header-block {
+    margin-bottom: 32px;
+}
+
+.post-main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--font-color-1);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+/* meta 信息栏 */
+.post-meta-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: var(--font-color-3);
+    margin-bottom: 8px;
+}
+.post-meta-sep {
+    color: var(--line-2);
+}
+.post-reading-time {
+    color: var(--font-color-3);
+}
+
+/* 分类链接 */
+.post-category-link {
+    color: var(--font-color-3) !important;
+}
+.post-category-link:hover {
+    color: var(--font-color-0) !important;
+}
+
+/* 音频播放器 */
+.post-audio-player {
+    margin-bottom: 24px;
+}
+.post-audio-player audio {
+    width: 100%;
+    height: 44px;
+    border-radius: 22px;
+    outline: none;
+}
+
+/* 导读精华区块 */
+.post-digest {
+    background: var(--bg-color-2);
+    border-left: 3px solid var(--font-color-0);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+}
+.post-digest-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--font-color-0);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.post-digest-content {
+    font-size: 0.95rem;
+    color: var(--font-color-2);
+    line-height: 1.8;
+}
+
+/* h2 标题 */
+.post-md h2 {
+    margin: 32px 0 16px;
+}
+
+/* 标签区 */
+.post-tags {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.post-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--bg-color-2);
+    border: 1px solid var(--line-2);
+    color: var(--font-color-2) !important;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+.post-tag:hover {
+    background: var(--font-color-0);
+    color: #fff !important;
+    border-color: var(--font-color-0);
+}
