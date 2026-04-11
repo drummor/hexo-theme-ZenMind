@@ -1,13 +1,8 @@
 <div class="post-main">
     <% if (is_post()) { %>
         <%
-            // 自动检测音频：基于 slug 猜测音频路径
-            var pathParts = page.path.split('/');
-            var slug = pathParts.length >= 3 ? pathParts[pathParts.length - 2] : page.slug;
-            var possiblePath = slug ? 'audio/' + slug + '/audio.m4a' : null;
-            var cleanContent = slug
-                ? page.content.replace(/\[[^\]]*\]\(\/audio\/[^)]*\.m4a\)/g, '')
-                : page.content;
+            // 计算阅读时间（去除音频链接后统计）
+            var cleanContent = page.content.replace(/\[[^\]]*\]\(\/audio\/[^)]*\.m4a\)/g, '');
         %>
         <div class="post-header-block">
             <div class="post-main-title">
@@ -23,9 +18,9 @@
                 <% }); %>
             </div>
         </div>
-        <% if (possiblePath) { %>
+        <% if (page.audio) { %>
         <div class="post-audio-player">
-            <audio controls src="<%- url_for(possiblePath) %>"></audio>
+            <audio controls src="<%- url_for(page.audio) %>"></audio>
         </div>
         <% } %>
         <% if (page.description) { %>
@@ -50,7 +45,7 @@
 <% if (page.tags && page.tags.length > 0) { %>
     <div class="post-tags">
         <% page.tags.forEach(function(tag) { %>
-            <a class="post-tag" href="<%= url_for(tag.path) %>"><%= tag.name %></a>
+            <a class="post-tag" href="<%= url_for(tag.path) %>">#<%= tag.name %></a>
         <% }); %>
     </div>
 <% } %>
