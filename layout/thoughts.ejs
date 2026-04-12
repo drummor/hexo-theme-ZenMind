@@ -1,0 +1,37 @@
+<div class="thoughts-list">
+    <% if (page.isList) { %>
+        <% page.thoughts.forEach(function(thought) { %>
+        <div class="thought-card">
+            <div class="thought-content">
+                <%- thought.content %>
+            </div>
+            <div class="thought-meta">
+                <span class="thought-date"><%- date(thought.date, "YYYY.MM.DD") %></span>
+                <% if (thought.tags && thought.tags.length > 0) { %>
+                <div class="thought-tags">
+                    <% thought.tags.forEach(function(tag) { %>
+                    <span class="thought-tag">#<%= tag %></span>
+                    <% }); %>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <% }); %>
+    <% } else { %>
+        <div class="thought-card thought-single">
+            <div class="thought-content">
+                <%- page.content %>
+            </div>
+            <div class="thought-meta">
+                <span class="thought-date"><%- date(page.date, "YYYY.MM.DD") %></span>
+                <% if (page.tags && page.tags.length > 0) { %>
+                <div class="thought-tags">
+                    <% page.tags.forEach(function(tag) { %>
+                    <span class="thought-tag">#<%= tag.name %></span>
+                    <% }); %>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    <% } %>
+</div>
