@@ -5,27 +5,26 @@
   --font-color-1: #252525;
   --font-color-2: #333;
   --font-color-3: #aaa;
-  --bg-color-1: #eee;
+  --bg-color-1: #f5f3f0;  /* 温暖米白 */
   --bg-color-2:#fafafa;
   --bg-color-3:#fff
-  --line-1: #eee;
-  --line-2: #ddd;
-  --button-hover-bg-color: #e0e0e0; /* 白天模式按钮悬停背景色 */
+  --line-1: #e8e5e0;     /* 温暖线条 */
+  --line-2: #d8d5d0;
+  --button-hover-bg-color: #e8e5e0;
 }
 
 
 :root[data-theme='dark'] {
-  --font-color-0: #ff4d4d; /* 更亮的红色，确保在暗色背景下的可见性 */
-  --font-color-1: #f8f8f8; /* 浅灰色，用于主要文本 */
-  --font-color-2: #ccc; /* 中灰色，用于次要文本 */
-  --font-color-3: #888; /* 深灰色，用于辅助文本 */
-  --bg-color-1: #1a1a1a; /* 深灰色背景 */
-  --bg-color-2:#323232;
+  --font-color-0: #ff4d4d;
+  --font-color-1: #f8f8f8;
+  --font-color-2: #ccc;
+  --font-color-3: #888;
+  --bg-color-1: #1a1918;   /* 温暖深色 */
+  --bg-color-2:#242320;
   --bg-color-3:#000000;
-  --line-1: #444; /* 深灰色分隔线 */
-  --line-2: #555; /* 稍浅的灰色分隔线 */
-  --button-hover-bg-color: #444; /* 暗黑模式按钮悬停背景色 */
-
+  --line-1: #2a2a28;
+  --line-2: #3a3a38;
+  --button-hover-bg-color: #2a2a28;
 }
 
 #toggle-theme:hover {
@@ -93,8 +92,8 @@ a {
 }
 
 .header {
-  padding-bottom: 48px;
-  margin-bottom: 48px;
+  padding-bottom: 32px;
+  margin-bottom: 40px;
   border-bottom: 1px solid var(--line-1);
   display: flex;
   flex-direction: row;
@@ -106,7 +105,7 @@ a {
   font-size: 2rem;
   font-weight: 600;
   color: var(--font-color-1);
-  margin-bottom: 23px;
+  margin-bottom: 16px;
   flex: 0 0 100%;
 }
 .nav {
@@ -177,9 +176,9 @@ a {
 }
 .post {
   width: 100%;
-  padding-bottom: 48px;
-  margin-bottom: 48px;
-  border-bottom: 1px dashed var(--line-2);
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line-2);  /* 实线替代虚线 */
 }
 .post-title {
   display: inline-block;
@@ -191,7 +190,7 @@ a {
   /*transition: color ease-in-out .5s;*/
 }
 .post-title:hover {
-  color: var(--font-color-0);
+  color: var(--font-color-2);
   transition: color ease-in-out 0.5s;
 }
 .post-except {
@@ -346,7 +345,7 @@ a {
   /*transition: color ease-in-out .5s;*/
 }
 .archive-title:hover {
-  color: var(--font-color-0);
+  color: var(--font-color-2);
   transition: color ease-in-out 0.5s;
 }
 
@@ -435,26 +434,50 @@ a {
 
 /* 分类链接 */
 .post-category-link {
-    color: var(--color) !important;
-    background: var(--bg-color-2);
-    border: 1px solid var(--color);
+    color: var(--font-color-0) !important;
+    background: transparent;
+    border: 1px solid var(--font-color-0);
     padding: 2px 10px;
     border-radius: 20px;
-    font-size: 0.85em;
+    font-size: 0.8em;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 .post-category-link:hover {
-    color: var(--font-color-0) !important;
+    color: #fff !important;
+    background: var(--font-color-0);
 }
 
 /* 音频播放器 */
 .post-audio-player {
     margin-bottom: 24px;
+    padding: 16px;
+    background: var(--bg-color-2);
+    border: 1px solid var(--line-2);
+    border-radius: 12px;
 }
 .post-audio-player audio {
     width: 100%;
     height: 44px;
     border-radius: 22px;
     outline: none;
+}
+
+/* 播客标识 */
+.podcast-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    color: var(--font-color-3);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+.podcast-icon {
+    width: 12px;
+    height: 12px;
+    opacity: 0.7;
 }
 
 /* 导读精华区块 */
@@ -504,8 +527,7 @@ a {
     transition: all 0.3s;
 }
 .post-tag:hover {
-    background: var(--font-color-0);
-    color: #fff !important;
+    color: var(--font-color-0) !important;
     border-color: var(--font-color-0);
 }
 

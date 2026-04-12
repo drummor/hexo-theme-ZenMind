@@ -114,20 +114,14 @@
 }
 .post-md-t blockquote
 {
-    border-left: 0pt solid  #ff4d4d;
-    padding-left: 12px;
+    border-left: none;
+    padding-left: 0;
     word-wrap: break-word;
 }
 
 
 .post-md-t blockquote::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 50px; /* 模拟边框的高度 */
-    width: 5px; /* 边框的宽度 */
-    background-color: #ff4d4d; /* 边框的颜色 */
+    content: none;
 }
 
 .post-md-t .video-container
