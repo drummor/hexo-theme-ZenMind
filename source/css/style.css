@@ -435,7 +435,12 @@ a {
 
 /* 分类链接 */
 .post-category-link {
-    color: var(--font-color-3) !important;
+    color: var(--color) !important;
+    background: var(--bg-color-2);
+    border: 1px solid var(--color);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.85em;
 }
 .post-category-link:hover {
     color: var(--font-color-0) !important;

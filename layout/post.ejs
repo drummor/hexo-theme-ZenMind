@@ -10,9 +10,6 @@
             </div>
             <div class="post-meta-bar">
                 <span class="post-date"><%- date(page.date, "YYYY.MM.DD") %></span>
-                <span class="post-meta-sep">·</span>
-                <span class="post-reading-time"><%= Math.ceil(cleanContent.replace(/<[^>]+>/g, "").length / 200) %> 分钟阅读</span>
-                <span class="post-meta-sep">·</span>
                 <% page.categories.forEach(function(category) { %>
                     <a class="post-category-link" href="<%= url_for(category.path) %>"><%= category.name %></a>
                 <% }); %>
