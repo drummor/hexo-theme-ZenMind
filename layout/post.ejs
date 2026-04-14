@@ -1,5 +1,25 @@
 <div class="post-main">
     <% if (is_post()) { %>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "<%= page.title %>",
+          "description": "<%= page.description || '' %>",
+          "datePublished": "<%= page.date.toISOString() %>",
+          "dateModified": "<%= (page.updated ? page.updated.toISOString() : page.date.toISOString()) %>",
+          "author": {
+            "@type": "Person",
+            "name": "<%= page.author || 'drummor' %>"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "滑动窗口",
+            "url": "https://drummor.github.io"
+          },
+          "url": "<%= page.permalink %>"
+        }
+        </script>
         <%
             // 计算阅读时间（去除音频链接后统计）
             var cleanContent = page.content.replace(/\[[^\]]*\]\(\/audio\/[^)]*\.m4a\)/g, '');
