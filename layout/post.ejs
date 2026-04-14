@@ -5,7 +5,7 @@
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": "<%= page.title %>",
-          "description": "<%= page.description || '' %>",
+          "description": "<%= (page.seo_description || page.description) || '' %>",
           "datePublished": "<%= page.date.toISOString() %>",
           "dateModified": "<%= (page.updated ? page.updated.toISOString() : page.date.toISOString()) %>",
           "author": {

@@ -36,7 +36,7 @@
   <meta property="og:locale" content="zh_CN">
   <% if (is_post() && page.cover) { %>
   <meta property="og:image" content="<%= page.cover %>">
-  <% } else if (!is_post()) { %>
+  <% } else { %>
   <meta property="og:image" content="<%= config.url %>/img/og-image.png">
   <% } %>
 
@@ -46,6 +46,8 @@
   <meta name="twitter:description" content="<%= is_post() && (page.seo_description || page.description) ? (page.seo_description || page.description) : config.description %>">
   <% if (is_post() && page.cover) { %>
   <meta name="twitter:image" content="<%= page.cover %>">
+  <% } else { %>
+  <meta name="twitter:image" content="<%= config.url %>/img/og-image.png">
   <% } %>
   <!-- meta description -->
   <meta name="description" content="<%= is_post() && (page.seo_description || page.description) ? (page.seo_description || page.description) : config.description %>">
